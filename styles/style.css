@@ -67,7 +67,6 @@ header .text-link:hover {
     z-index: -1;
 }
 
-
 .user-img::before {
     content: "";
     position: absolute;
@@ -124,8 +123,11 @@ header .text-link:hover {
 .search-input input{
     width: 600px;
     height: 46px;
+    outline: none;
     border-radius: 30px;
     border: 1px solid lightgray;
+    padding-left: 48px;
+    padding-right: 48px;
 }
 
 @media (max-width: 650px) {
@@ -143,9 +145,53 @@ header .text-link:hover {
     left: 16px;
 }
 
+.search-input input:hover {
+    box-shadow: 0 1px 8px #dadada;
+}
+
 .search-input input:focus {
     border: 1px solid lightgray;
     border-radius: 30px;
+}
+
+#keyboard-icon {
+    position: absolute;
+    top: 17px;
+    right: 16px;
+    cursor: pointer;
+}
+
+#text-insertion-tooltip {
+    background: #333;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 196px;
+    height: 28px;
+    position: absolute;
+    bottom: -32px;
+    right: -74px;
+    box-shadow: 2px 2px 4px lightgray;
+    display: none;
+}
+
+#text-insertion-tooltip::before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-bottom: 5px solid #333;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    top: -5px;
+    right: 94px;
+}
+
+#keyboard-icon:hover + #text-insertion-tooltip {
+    display: inline-flex;
 }
 
 .search-buttons {
